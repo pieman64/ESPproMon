@@ -9,4 +9,6 @@ It's **app**liance **p**rofiling which allows you to identify when specific appl
 
 The first files we are including in this repository are for the emonTx and Arduino Shield supplied by [Open Energy Monitor](https://community.openenergymonitor.org/) Arduino in **Wales**. You will find the sketches in [this](https://github.com/pieman64/ESPproMon/tree/master/OpenEnergyMonitor) directory.
 
+![emonTx Arduino shield](https://github.com/pieman64/ESPproMon/blob/master/images/emonTx%20Arduino%20shield%20components.jpg)
+
 More to follow ........
