@@ -16,6 +16,7 @@ The emonTx is available in kit form for the Arduino Uno and Leonardo. This is th
 ![emonTx Arduino shield](https://github.com/pieman64/ESPproMon/blob/master/images/emonTx%20Arduino%20shield%20components.jpg)
 
 This is the completed shield fitted to a Leonardo with a DS18B20 sensor and USB2TTL adaptor fitted. It also has the **AC - AC** adaptor that's essential if you want to accurately measure Real Power and therefore real Energy costs.
+
 ![Comleted emonTx shield](https://github.com/pieman64/ESPproMon/blob/master/images/emonTx%20Arduino%20shield%20with%20Leonardo%20DS18B20%20and%20TTL.jpg)
 
 Actually the shield is not technically complete as we only fitted CT1 and the high precision CT4. We might fit CT2 and CT3 connectors at a later date but for now two connectors is fine for our requirements. 
