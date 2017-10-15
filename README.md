@@ -7,7 +7,7 @@ It's **app**liance **p**rofiling which allows you to identify when specific appl
 
 ![ESPproMon Smartphone energy monitoring and contol app](https://github.com/pieman64/ESPproMon/blob/master/images/ESPproMon%204%20Tabs.png)
 
-The pitcture below should be your ultimate goal i.e. a simple **plug and play CT (current transformer)** clipped around the live feed in your consumer unit. The CT will then be hooked up to your chosen energy monitoring hardware and the Smartphone app does the rest.
+The pitcture below should be your ultimate goal i.e. a simple **plug and play CT (current transformer)** clipped around the live feed in your consumer unit. The other end of the CT will then be hooked up to your chosen energy monitoring hardware and the Smartphone app does the rest.
 
 ![CT sensor in a domestic consumer unit enclosure.](https://github.com/pieman64/ESPproMon/blob/master/images/Consumer%20unit%20with%20CT.jpg)
 
