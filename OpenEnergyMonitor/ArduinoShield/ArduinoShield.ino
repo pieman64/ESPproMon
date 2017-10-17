@@ -1,7 +1,7 @@
 /*
-  LeoShieldCT1234v3.ino with DS18B20 option from:
+  ArduinoShield.ino for Leonardo or Uno WAS LeoShieldCT1234v3.ino with DS18B20 option from:
   https://github.com/openenergymonitor/emontx-shield/blob/master/firmware/Shield_CT1234_Voltage_SerialOnly/Shield_CT1234_Voltage_SerialOnly.ino
-  EmonTx CT123 Voltage Serial Only example 
+  EmonTx CT1234 Voltage Serial Only example 
   Part of the openenergymonitor.org project 
   Licence: GNU GPL V3 
   Author: Trystan Lea and minor mods by ESPproMon©
@@ -11,7 +11,9 @@
 
 EnergyMonitor ct1,ct2,ct3,ct4;  // Create  instances for each CT channel
 bool DEBUG = 1;                 // Print serial debug
-bool TTLAVAILABLE = 1;          // Send data via TTL on Serial1 of Leonardo - maybe Software Serial TODO for Uno
+#ifdef  ARDUINO_AVR_LEONARDO
+    #define FOUND_LEONARDO
+#endif // not a LEONARDO so must be an UNO
 
 #include <OneWire.h>                    //http://www.pjrc.com/teensy/td_libs_OneWire.html
 #include <DallasTemperature.h>          //http://download.milesburton.com/Arduino/MaximTemperature/DallasTemperature_LATEST.zip
@@ -46,7 +48,9 @@ void setup()
   //while (!Serial) {}   // wait for serial port to connect. Normally for Leonardo but not needed
   Serial.println("emonTX Shield CT1234 with Voltage & DS18B20 - Serial Only example"); 
   Serial.println("OpenEnergyMonitor.org");
-  Serial1.begin(115200); // start TTL
+  #ifdef  FOUND_LEONARDO
+    Serial1.begin(115200); // start Serial1 on Leonardo
+  #endif
   // Calibration factor = CT ratio / burden resistance = (100A / 0.05A) / 33 Ohms = 60.606
   ct1.current(1, 60.606); // range of 58.18 to 63.02 for shield and default x with range 86.35 – 95.45 emonTx
   ct2.current(2, 60.606);                                     
@@ -56,9 +60,9 @@ void setup()
   /* (ADC input, calibration, phase_shift)  // use CalVRef.ino sketch to get READVCC_CALIBRATION_CONST 1115000L for Leonardo
   default normally: ct1.voltage(0, 300.6, 1.7);         // Robert thinks new CT's might need 1.85
   */
-  ct1.voltage(0, 268.8, 1.25);          // phase 1.7 default is calculated by comparing real and apparent with 100% PF device                  
+  ct1.voltage(0, 268.8, 1.25);      // phase 1.7 default is calculated by comparing real and apparent with 100% PF device                  
   ct2.voltage(0, 265.8, 1.25);                                
-  ct3.voltage(0, 265.8, 1.25);          // 268 97 per https://learn.openenergymonitor.org/electricity-monitoring/ctac/calibration
+  ct3.voltage(0, 265.8, 1.25);      // 268.97 per https://learn.openenergymonitor.org/electricity-monitoring/ctac/calibration
   ct4.voltage(0, 265.8, 1.25);
   
   // Setup indicator LED
@@ -119,7 +123,7 @@ void loop()
       emontx.temp[j]=get_temperature(j);
   }
     
-   if (DEBUG==1) {
+   if (DEBUG==1) {  // for Leonardo will print to Serial and Serial1, but just Serial for Uno
     Serial.print("ct1:");   Serial.print(int(ct1.realPower * 100));
     Serial.print(",ct2:");  Serial.print(int(ct2.realPower * 100));
     Serial.print(",ct3:");  Serial.print(int(ct3.realPower * 100));
@@ -136,7 +140,7 @@ void loop()
     delay(50);
   }
 
-   if (TTLAVAILABLE==1) {
+#ifdef FOUND_LEONARDO
     Serial1.print("ct1:");   Serial1.print(int(ct1.realPower * 100));
     Serial1.print(",ct2:");  Serial1.print(int(ct2.realPower * 100));
     Serial1.print(",ct3:");  Serial1.print(int(ct3.realPower * 100));
@@ -151,7 +155,7 @@ void loop()
     }
     Serial1.println();
     delay(50);
-  }
+#endif  
     
   // Available properties: ct1.realPower, ct1.apparentPower, ct1.powerFactor, ct1.Irms and ct1.Vrms
   delay(1500);
