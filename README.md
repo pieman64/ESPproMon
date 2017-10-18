@@ -7,11 +7,16 @@ It's **app**liance **p**rofiling which allows you to identify when specific appl
 
 ![ESPproMon Smartphone energy monitoring and contol app](https://github.com/pieman64/ESPproMon/blob/master/images/ESPproMon%204%20Tabs.png)
 
-The pitcture below should be your ultimate goal i.e. a simple **plug and play CT (current transformer)** clipped around the live feed in your consumer unit. The other end of the CT will then be hooked up to your chosen energy monitoring hardware and the Smartphone app does the rest.
+**PeaceFair** make some very reasonably priced energy monitors and they have a **user friendly interface** for the ESPproMon system. You will however need the services of a qualified electrician to safely wire up the PeaceFair products. Below is one of their products wired up in our consumer unit.
+<p align="center">
+<img src="https://github.com/pieman64/ESPproMon/blob/master/images/PZEM-004%20from%20PeaceFair%20installed%20in%20a%20domestic%20electrical%20consumer%20unit.jpg">
+</p>
+
+The picture below should be your ultimate goal i.e. a simple **plug and play CT (current transformer)** clipped around the live feed in your consumer unit. The other end of the CT will then be hooked up to your chosen energy monitoring hardware and the Smartphone app does the rest.
 
 ![CT sensor in a domestic consumer unit enclosure.](https://github.com/pieman64/ESPproMon/blob/master/images/Consumer%20unit%20with%20CT.jpg)
 
-The first files we are including in this repository are for the emonTx and Arduino Shield supplied by [Open Energy Monitor](https://community.openenergymonitor.org/) Arduino in **Wales**. You will find the sketches in [this](https://github.com/pieman64/ESPproMon/tree/master/OpenEnergyMonitor) directory.
+Included in this repository are files for the **emonTx** and **Arduino Shield** supplied by [Open Energy Monitor](https://community.openenergymonitor.org/) in **Wales**. You will find the sketches in [this](https://github.com/pieman64/ESPproMon/tree/master/OpenEnergyMonitor) directory.
 
 The **emonTx** is available in kit form for the Arduino Uno and Leonardo. This is the kit we received and found the build procedure very straightforward.
 
@@ -35,6 +40,4 @@ If you haven't used the Serial port on your Raspberry Pi before you might want t
 ![THE RASPBERRY PI UARTS](https://www.raspberrypi.org/documentation/configuration/uart.md) and 
 ![Configuring The GPIO Serial Port On Raspbian Jessie](https://spellfoundry.com/2016/05/29/configuring-gpio-serial-port-raspbian-jessie-including-pi-3/)
 
-
-
-More details for other hardware systems to follow in due course.
+More details to follow in due course but meanwhile if you have any questions you can open a GitHub issue or contact us via our website at [ESPproMon](https://peacefairapp.com/).
