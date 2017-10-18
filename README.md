@@ -25,9 +25,16 @@ This is the completed shield fitted to a Leonardo with a DS18B20 sensor and USB2
 
 Actually the shield is not technically complete as we only fitted CT1 and the high precision CT4. We might fit CT2 and CT3 connectors at a later date but for now two connectors is fine for our requirements. 
 
-We have now added the hex and ino files for the **emonPi** but as we don't have an emonPi it's untested and you use the files at your own risk. If you haven't used the Serial port on your Raspberry Pi before you might want to take a look at these two web pages:
+We have now added the hex and ino files for the **emonPi** but as we don't have an emonPi it's untested and you use the files at your own risk. The emonPi from ![Open Energy Monitor](https://shop.openenergymonitor.com/emonpi-3/) is probably the **safest Energy Monitoring system currently available** and it offers a plug and play solution for anyone that doesn't have formal training with electrical installations.
+<p align="center">
+  <img src="https://github.com/pieman64/ESPproMon/blob/master/images/emonPi%20complete%20with%20enclosure.jpg">
+  <img src="https://github.com/pieman64/ESPproMon/blob/master/images/emonPi%20PCB%20with%20Raspberry%20Pi.jpg">
+</p>
+If you haven't used the Serial port on your Raspberry Pi before you might want to take a look at these two web pages:
 
 ![THE RASPBERRY PI UARTS](https://www.raspberrypi.org/documentation/configuration/uart.md) and 
 ![Configuring The GPIO Serial Port On Raspbian Jessie](https://spellfoundry.com/2016/05/29/configuring-gpio-serial-port-raspbian-jessie-including-pi-3/)
+
+
 
 More details for other hardware systems to follow in due course.
