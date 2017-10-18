@@ -14,7 +14,7 @@ It's **app**liance **p**rofiling which allows you to identify when specific appl
 
 The picture below should be your ultimate goal i.e. a simple **plug and play CT (current transformer)** clipped around the live feed in your consumer unit. The other end of the CT will then be hooked up to your chosen energy monitoring hardware and the Smartphone app does the rest.
 
-![CT sensor in a domestic consumer unit enclosure.](https://github.com/pieman64/ESPproMon/blob/master/images/Consumer%20unit%20with%20CT.jpg)
+![CT sensor in a domestic consumer unit enclosure.](https://github.com/pieman64/ESPproMon/blob/master/images/Consumer%20unit%20with%20current%20transformer.jpg)
 
 Included in this repository are files for the **emonTx** and **Arduino Shield** supplied by [Open Energy Monitor](https://community.openenergymonitor.org/) in **Wales**. You will find the sketches in [this](https://github.com/pieman64/ESPproMon/tree/master/OpenEnergyMonitor) directory.
 
