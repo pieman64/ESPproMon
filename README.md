@@ -32,7 +32,8 @@ This is the completed shield fitted to a Leonardo with a DS18B20 sensor and USB2
 <img src="https://github.com/pieman64/ESPproMon/blob/master/images/emonTx%20Arduino%20shield%20with%20Leonardo%20DS18B20%20and%20TTL.jpg">
 </p>
 
-Actually the shield is not technically complete as we only fitted CT1 and the high precision CT4. We might fit CT2 and CT3 connectors at a later date but for now two connectors is fine for our requirements. 
+Actually the shield is not technically complete as we only fitted CT1 and CT4. Please note CT4 is a **regular current transformer port** on the shield, unlike the emonTx where CT4 is a high precision port up to a maximum of 4.5KW. Although you might use less than 4.5KW most of the time there will be times when your whole house consumption goes above this figure so the emonTx firmware is set to use CT3.
+**For the shield the firmware is set to use CT4**. We might fit CT2 and CT3 connectors to the shield at a later date but for now two connectors is fine for our requirements. 
 
 We have now added the hex and ino files for the **emonPi** but as we don't have an emonPi it's untested and you use the files at your own risk. The emonPi from ![Open Energy Monitor](https://shop.openenergymonitor.com/emonpi-3/) is probably the **safest Energy Monitoring system currently available** and it offers a plug and play solution for anyone that doesn't have formal training with electrical installations.
 <p align="center">
