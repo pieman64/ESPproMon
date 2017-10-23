@@ -1,6 +1,9 @@
-/*
-  ArduinoShield.ino for Leonardo or Uno WAS LeoShieldCT1234v3.ino with DS18B20 option from:
+*
+  USE CT4 !!!!!
+  ArduinoShieldV3.ino for Leonardo or Uno WAS LeoShieldCT1234v3.ino with DS18B20 option from:
   https://github.com/openenergymonitor/emontx-shield/blob/master/firmware/Shield_CT1234_Voltage_SerialOnly/Shield_CT1234_Voltage_SerialOnly.ino
+  Use micro USB to upload new sketches NOT TTL, TTL is just to receive data and only requires 2 pins GND and TX (labelled RX on shield as it
+  goes to RX allocated pin on the ESP).
   EmonTx CT1234 Voltage Serial Only example 
   Part of the openenergymonitor.org project 
   Licence: GNU GPL V3 
@@ -52,18 +55,19 @@ void setup()
     Serial1.begin(115200); // start Serial1 on Leonardo
   #endif
   // Calibration factor = CT ratio / burden resistance = (100A / 0.05A) / 33 Ohms = 60.606
-  ct1.current(1, 60.606); // range of 58.18 to 63.02 for shield and default x with range 86.35 – 95.45 emonTx
+  ct1.current(1, 60.606); // range of 58.18 to 63.02 for shield [default 90.9 with range 86.35 – 95.45 for emonTx 22 Ohms]
   ct2.current(2, 60.606);                                     
   ct3.current(3, 60.606);
-  ct4.current(4, 60.606); 
+  // CT 4 is high accuracy @ low power - 4.5kW Max for emonTx but NOT shield (2000 turns / 120 Ohm burden resistor = 16.66 for emonTx) 
+  ct4.current(4, 58.50); // shield doesn't have high accuracy CT4, normal 33 Ohms
   
   /* (ADC input, calibration, phase_shift)  // use CalVRef.ino sketch to get READVCC_CALIBRATION_CONST 1115000L for Leonardo
   default normally: ct1.voltage(0, 300.6, 1.7);         // Robert thinks new CT's might need 1.85
   */
-  ct1.voltage(0, 268.8, 1.25);      // phase 1.7 default is calculated by comparing real and apparent with 100% PF device                  
-  ct2.voltage(0, 265.8, 1.25);                                
-  ct3.voltage(0, 265.8, 1.25);      // 268.97 per https://learn.openenergymonitor.org/electricity-monitoring/ctac/calibration
-  ct4.voltage(0, 265.8, 1.25);
+  ct1.voltage(0, 268.97, 1.205);      // phase 1.7 default is calculated by comparing real and apparent with 100% PF device                  
+  ct2.voltage(0, 268.97, 1.205);      // was 265.8, 1.25                          
+  ct3.voltage(0, 268.97, 1.205);      // 268.97 per https://learn.openenergymonitor.org/electricity-monitoring/ctac/calibration
+  ct4.voltage(0, 268.97, 1.205);
   
   // Setup indicator LED
   pinMode(LEDpin, OUTPUT);                                              
@@ -124,10 +128,12 @@ void loop()
   }
     
    if (DEBUG==1) {  // for Leonardo will print to Serial and Serial1, but just Serial for Uno
-    Serial.print("ct1:");   Serial.print(int(ct1.realPower * 100));
-    Serial.print(",ct2:");  Serial.print(int(ct2.realPower * 100));
-    Serial.print(",ct3:");  Serial.print(int(ct3.realPower * 100));
-    Serial.print(",ct4:");  Serial.print(int(ct4.realPower * 100));
+    Serial.print("ct1:");   Serial.print(ct1.realPower);
+    //Serial.print(",ct1ap:");  Serial.print(int(ct1.apparentPower)); // was only used for "1.7" phase cal
+    Serial.print(",ct2:");  Serial.print(int(ct2.realPower));
+    Serial.print(",ct3:");  Serial.print(int(ct3.realPower));
+    Serial.print(",ct4:");  Serial.print(int(ct4.realPower));
+    //Serial.print(",ct4ap:");  Serial.print(int(ct4.apparentPower)); // was only used for "1.7" phase cal
     Serial.print(",vrms:"); Serial.print(int(ct1.Vrms * 100));
     Serial.print(",pulse:");Serial.print(emontx.pulseCount);
     if (DS18B20_STATUS==1){
@@ -136,15 +142,16 @@ void loop()
         Serial.print(emontx.temp[j]);
       }
     }
+    Serial.print(",mA:");Serial.print(int(ct4.Irms * 1000));  // TODO ONLY amps from one CT for apparent power calcs
     Serial.println();
     delay(50);
   }
 
 #ifdef FOUND_LEONARDO
-    Serial1.print("ct1:");   Serial1.print(int(ct1.realPower * 100));
-    Serial1.print(",ct2:");  Serial1.print(int(ct2.realPower * 100));
-    Serial1.print(",ct3:");  Serial1.print(int(ct3.realPower * 100));
-    Serial1.print(",ct4:");  Serial1.print(int(ct4.realPower * 100));
+    Serial1.print("ct1:");   Serial1.print(int(ct1.realPower));
+    Serial1.print(",ct2:");  Serial1.print(int(ct2.realPower));
+    Serial1.print(",ct3:");  Serial1.print(int(ct3.realPower));
+    Serial1.print(",ct4:");  Serial1.print(int(ct4.realPower));
     Serial1.print(",vrms:"); Serial1.print(int(ct1.Vrms * 100));
     Serial1.print(",pulse:");Serial1.print(emontx.pulseCount);
     if (DS18B20_STATUS==1){
@@ -153,6 +160,7 @@ void loop()
         Serial1.print(emontx.temp[j]);
       }
     }
+    Serial1.print(",mA:");Serial1.print(int(ct4.Irms * 1000));  // TODO ONLY amps from one CT for apparent power calcs
     Serial1.println();
     delay(50);
 #endif  
