@@ -6,11 +6,11 @@ What is Appp © Technology?
 It's **app**liance **p**rofiling which allows you to identify when specific appliances are powered up or powered down etc. It's very much in it's infancy but fully expected to be the **next big thing in Smart Energy Monitoring**.
 
 <p align="center">
-<img src="https://github.com/pieman64/ESPproMon/blob/master/images/ESPproMon%20pages%201%20and%202%20half%20size.png" alt="ESPproMon © Smartphone Energy Monitoring and Control app tabs 1 and 2">
+<img src="https://github.com/pieman64/ESPproMon/blob/master/images/ESPproMon%20Tab%201%20and%202%20dark%20halfsize.png" alt="ESPproMon © Smartphone Energy Monitoring and Control app tabs 1 and 2">
 </p>
 
 <p align="center">
-<img src="https://github.com/pieman64/ESPproMon/blob/master/images/ESPproMon%20pages%203%20and%204%20half%20size.png" alt="ESPproMon © Smartphone Energy Monitoring and Control app tabs 3 and 4">
+<img src="https://github.com/pieman64/ESPproMon/blob/master/images/ESPproMon%20Tab%203%20and%204%20dark%20halfsize.png" alt="ESPproMon © Smartphone Energy Monitoring and Control app tabs 3 and 4">
 </p>
 
 **PeaceFair** make some very reasonably priced energy monitors and they have a **user friendly interface** for the ESPproMon system. You will however need the services of a qualified electrician to safely wire up the PeaceFair products. Below is one of their products wired up in our consumer unit and providing **very accurate data**.
