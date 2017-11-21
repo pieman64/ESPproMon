@@ -60,4 +60,4 @@ If you haven't used the Serial port on your **Raspberry Pi** before you might wa
 
 ESPproMon can also be used with the **ACS712** (5A, 20 and 30A) from **Allegro MicroSystems** and details are available at [ESPecoMon](https://github.com/pieman64/ESPecoMon)
 
-If you have any questions you can open a GitHub issue or contact us via our website at [ESPproMon](https://peacefairapp.com/).
+If you have any questions you can open a GitHub issue or contact us via our website at [ESPproMon](https://ESPproMon.com/).
