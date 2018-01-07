@@ -48,7 +48,7 @@ Below is a photograph of the emonTx (not shield) and you can just see the USB2TT
   <img src="https://github.com/pieman64/ESPproMon/blob/master/images/emonTx%20with%20TTL.jpg" alt="emonTx with USB2TTL">
 </p>
 
-We have included the hex and ino files for the **emonPi** but as we don't have an emonPi it's untested and you use the files at your own risk. The emonPi from ![Open Energy Monitor](https://shop.openenergymonitor.com/emonpi-3/) is probably the **safest Energy Monitoring system currently available** and it offers a plug and play solution for anyone that doesn't have formal training with electrical installations.
+We have included the hex and ino files for the **emonPi** but as we don't have an emonPi it's untested and you use the files at your own risk. The emonPi from [Open Energy Monitor](https://shop.openenergymonitor.com/emonpi-3/) is probably the **safest Energy Monitoring system currently available** and it offers a plug and play solution for anyone that doesn't have formal training with electrical installations.
 <p align="center">
   <img src="https://github.com/pieman64/ESPproMon/blob/master/images/emonPi%20complete%20with%20enclosure.jpg" alt="emonPi from Open Energy Monitor">
   <img src="https://github.com/pieman64/ESPproMon/blob/master/images/emonPi%20PCB%20with%20Raspberry%20Pi.jpg" alt="emonPi circuit board">
