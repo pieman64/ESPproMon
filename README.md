@@ -55,8 +55,8 @@ We have included the hex and ino files for the **emonPi** but as we don't have a
 </p>
 If you haven't used the Serial port on your **Raspberry Pi** before you might want to take a look at these two web pages:
 
-![THE RASPBERRY PI UARTS](https://www.raspberrypi.org/documentation/configuration/uart.md) and 
-![Configuring The GPIO Serial Port On Raspbian Jessie](https://spellfoundry.com/2016/05/29/configuring-gpio-serial-port-raspbian-jessie-including-pi-3/)
+[THE RASPBERRY PI UARTS](https://www.raspberrypi.org/documentation/configuration/uart.md) and 
+[Configuring The GPIO Serial Port On Raspbian Jessie](https://spellfoundry.com/2016/05/29/configuring-gpio-serial-port-raspbian-jessie-including-pi-3/)
 
 ESPproMon can also be used with the **ACS712** (5A, 20 and 30A) from **Allegro MicroSystems** and details are available at [ESPecoMon](https://github.com/pieman64/ESPecoMon)
 
